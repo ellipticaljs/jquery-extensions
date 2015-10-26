@@ -36,7 +36,8 @@ function copyJquery(){
 }
 
 function minifyJquery(){
-    gulp.src('./lib/jquery.js')
+    return gulp.src('./lib/jquery.js')
+        .pipe(concat('jquery.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(DIST));
 }
@@ -47,8 +48,9 @@ function copyMS(){
 }
 
 function minifyMS(){
-    gulp.src(MS)
-        .pipe(ugligy())
+    return gulp.src(MS)
+        .pipe(concat('mutation-summary.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(DIST));
 }
 
