@@ -1,0 +1,9 @@
+[
+  "./lib/jquery-mutation-summary.js",
+  "./lib/jquery.utils",
+  "./lib/jquery.device.js",
+  "./lib/jquery.support",
+  "./lib/jquery.transition.js",
+  "./lib/jquery.touch.js",
+  "./lib/jquery.transforms.js"
+]
