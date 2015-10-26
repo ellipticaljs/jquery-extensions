@@ -9,8 +9,7 @@
     "url": "https://github.com/tachyon1337/jquery-extensions.git"
   },
   "dependencies": {
-    "mutation-summary": "git+https://github.com/rafaelw/mutation-summary.git",
-    "jquery-mutation-summary": "git+https://github.com/joelpurra/jquery-mutation-summary.git"
+    "mutation-summary": "git+https://github.com/rafaelw/mutation-summary.git"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
