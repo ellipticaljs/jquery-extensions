@@ -1,5 +1,5 @@
 
 
-module.exports=require('mutation-summary');
-module.exports=require('./dist/jquery');
+require('mutation-summary');
+require('./dist/jquery');
 module.exports=require('./dist/jquery-extensions');
