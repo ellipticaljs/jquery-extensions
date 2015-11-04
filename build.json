@@ -1,8 +1,8 @@
 [
   "./lib/jquery.mutation-summary.js",
-  "./lib/jquery.utils",
+  "./lib/jquery.utils.js",
   "./lib/jquery.device.js",
-  "./lib/jquery.support",
+  "./lib/jquery.support.js",
   "./lib/jquery.transition.js",
   "./lib/jquery.touch.js",
   "./lib/jquery.transforms.js"
