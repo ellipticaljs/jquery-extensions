@@ -1,5 +1,6 @@
 [
   "./lib/utils.js",
+  "./lib/extensions.js",
   "./lib/device.js",
   "./lib/support.js",
   "./lib/transition.js",
