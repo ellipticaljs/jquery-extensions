@@ -6,24 +6,21 @@ var gulp=require('gulp'),
     BUILD_NAME='jquery.extensions.js',
     MIN_NAME='jquery.extensions.min.js',
     REPO_NAME='jquery extensions',
-    DIST='./dist',
-    MS='./node_modules/mutation-summary/src/mutation-summary.js';
+    DIST='./dist';
 
 
 
 gulp.task('default',function(){
-    console.log(REPO_NAME + ' ..."tasks: gulp build|gulp minify"');
+    console.log(REPO_NAME + ' ..."tasks: gulp build|minify"');
 });
 
 gulp.task('build',function(){
-    copyMS();
     copyJquery();
     concatStream(BUILD_NAME)
         .pipe(gulp.dest(DIST));
 });
 
 gulp.task('minify',function(){
-    minifyMS();
     minifyJquery();
     concatStream(MIN_NAME)
         .pipe(uglify())
@@ -38,18 +35,6 @@ function copyJquery(){
 function minifyJquery(){
     return gulp.src('./lib/jquery.js')
         .pipe(concat('jquery.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(DIST));
-}
-
-function copyMS(){
-    gulp.src(MS)
-        .pipe(gulp.dest(DIST));
-}
-
-function minifyMS(){
-    return gulp.src(MS)
-        .pipe(concat('mutation-summary.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(DIST));
 }
