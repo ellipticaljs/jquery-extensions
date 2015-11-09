@@ -1,0 +1,22 @@
+{
+  "name": "jquery-extensions",
+  "description": "jquery extensions library",
+  "main": "index.js",
+  "authors": [
+    "S. Francis"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery",
+    "extensions"
+  ],
+  "homepage": "https://github.com/tachyon1337/jquery-extensions",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
