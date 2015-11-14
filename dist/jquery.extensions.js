@@ -717,8 +717,7 @@
 	function _getScreenWidth() {
 		return window.innerWidth || $(window).width();
 	}
-	$.device = $.device || {};
-	$.extend($.device, device);
+	$.device = device
 	return $;
 
 
