@@ -1,7 +1,7 @@
 {
   "name": "jquery-extensions",
   "description": "jquery extensions library",
-  "version":"1.0.1",
+  "version": "1.0.2",
   "main": "dist/jquery.extensions.js",
   "authors": [
     "S. Francis"
@@ -19,5 +19,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "elliptical-jquery": "~2.1.6"
+  }
 }

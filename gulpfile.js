@@ -15,13 +15,11 @@ gulp.task('default',function(){
 });
 
 gulp.task('build',function(){
-    copyJquery();
     concatStream(BUILD_NAME)
         .pipe(gulp.dest(DIST));
 });
 
 gulp.task('minify',function(){
-    minifyJquery();
     concatStream(MIN_NAME)
         .pipe(uglify())
         .pipe(gulp.dest(DIST));
