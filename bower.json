@@ -1,7 +1,7 @@
 {
   "name": "jquery-extensions",
   "description": "jquery extensions library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/jquery.extensions.js",
   "authors": [
     "S. Francis"
@@ -11,7 +11,7 @@
     "jquery",
     "extensions"
   ],
-  "homepage": "https://github.com/tachyon1337/jquery-extensions",
+  "homepage": "https://github.com/ellipticaljs/jquery-extensions",
   "moduleType": [],
   "ignore": [
     "**/.*",

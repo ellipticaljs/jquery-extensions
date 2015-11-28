@@ -1,12 +1,15 @@
 {
   "name": "jquery-extensions",
   "description": "jquery extensions library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "S. Francis",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tachyon1337/jquery-extensions.git"
+    "url": "https://github.com/ellipticaljs/jquery-extensions.git"
+  },
+  "dependencies":{
+    "elliptical-jquery":"git+https://github.com/ellipticaljs/jquery.git"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
@@ -17,9 +20,9 @@
     "gulp-uglify": "^0.2.1"
   },
   "bugs": {
-    "url": "https://github.com/tachyon1337/jquery-extensions/issues"
+    "url": "https://github.com/ellipticaljs/jquery-extensions/issues"
   },
-  "homepage": "https://github.com/tachyon1337/jquery-extensions",
+  "homepage": "https://github.com/ellipticaljs/jquery-extensions",
   "main": "index.js",
   "directories": {
     "doc": "docs",
