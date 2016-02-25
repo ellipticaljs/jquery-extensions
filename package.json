@@ -1,7 +1,7 @@
 {
   "name": "jquery-extensions",
   "description": "jquery extensions library",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "S. Francis",
   "license": "MIT",
   "repository": {
@@ -9,7 +9,7 @@
     "url": "https://github.com/ellipticaljs/jquery-extensions.git"
   },
   "dependencies":{
-    "elliptical-jquery":"git+https://github.com/ellipticaljs/jquery.git"
+    "jquery":"git+https://github.com/jquery/jquery-dist.git"
   },
   "devDependencies": {
     "gulp": "^3.8.7",
