@@ -1,7 +1,7 @@
 {
   "name": "jquery-extensions",
   "description": "jquery extensions library",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "dist/jquery.extensions.js",
   "authors": [
     "S. Francis"

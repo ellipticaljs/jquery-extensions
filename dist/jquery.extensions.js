@@ -377,6 +377,7 @@
         var result = this.find(selector);
         if (result[0]) {
             callback(result);
+            return;
         }
         var timeOutId = setInterval(function () {
             result = self.find(selector);
@@ -384,7 +385,7 @@
                 clearInterval(timeOutId);
                 callback(result);
             } else count++;
-        }, 500);
+        }, 300);
     };
 
     $.fn.detachClass=function(klass){
