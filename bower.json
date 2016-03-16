@@ -1,7 +1,7 @@
 {
   "name": "jquery-extensions",
   "description": "jquery extensions library",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "dist/jquery.extensions.js",
   "authors": [
     "S. Francis"
@@ -33,6 +33,6 @@
     "bundle.json"
   ],
   "dependencies": {
-    "jquery": "~2.2.1"
+    "jquery-import": "~1.0.2"
   }
 }
