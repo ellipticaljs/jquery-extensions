@@ -2370,7 +2370,7 @@
         function bindTouch(element, handleObj) {
             var old_handler = handleObj.handler;
             var selector = handleObj.selector;
-            element.on('touchstart', selector, function (event) {
+            element.on('touchend', selector, function (event) {
                 event.preventDefault();
                 event.namespace = 'elliptical.touch';
                 return old_handler.apply(this, arguments);
@@ -2384,7 +2384,7 @@
 
         function unbindTouch(element, handleObj) {
             var selector = handleObj.selector;
-            element.off('touchstart', selector);
+            element.off('touchend', selector);
         }
 
     }());
