@@ -776,7 +776,7 @@
              * @returns {boolean}
              */
 			get: function () {
-				return ($.touch.device.viewport.width <= MQ_SMARTPHONE_MAX_WIDTH);
+				return ($.device.viewport.width <= MQ_SMARTPHONE_MAX_WIDTH);
 			},
 			configurable: false
 
