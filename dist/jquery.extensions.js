@@ -316,11 +316,11 @@
         }
 
         var patt = new RegExp( '\\s' +
-            removals.
-            replace( /\*/g, '[A-Za-z0-9-_]+' ).
-            split( ' ' ).
-            join( '\\s|\\s' ) +
-            '\\s', 'g' );
+          removals.
+          replace( /\*/g, '[A-Za-z0-9-_]+' ).
+          split( ' ' ).
+          join( '\\s|\\s' ) +
+          '\\s', 'g' );
 
         self.each( function ( i, it ) {
             var cn = ' ' + it.className + ' ';
@@ -480,92 +480,92 @@
  */
 
 (function (root, factory) {
-	if (typeof module !== 'undefined' && module.exports) {
-		//commonjs
-		module.exports = factory();
-	} else if (typeof define === 'function' && define.amd) {
-		// AMD. Register as an anonymous module.
-		define([], factory);
-	} else {
-		// Browser globals (root is window)
-		root.returnExports = factory();
-	}
+    if (typeof module !== 'undefined' && module.exports) {
+        //commonjs
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory();
+    }
 }(this, function () {
-	var browser = {};
-	browser.mozilla = false;
-	browser.webkit = false;
-	browser.opera = false;
-	browser.msie = false;
+    var browser = {};
+    browser.mozilla = false;
+    browser.webkit = false;
+    browser.opera = false;
+    browser.msie = false;
 
-	var nAgt = navigator.userAgent;
-	browser.name = navigator.appName;
-	browser.fullVersion = '' + parseFloat(navigator.appVersion);
-	browser.majorVersion = parseInt(navigator.appVersion, 10);
-	var nameOffset, verOffset, ix;
+    var nAgt = navigator.userAgent;
+    browser.name = navigator.appName;
+    browser.fullVersion = '' + parseFloat(navigator.appVersion);
+    browser.majorVersion = parseInt(navigator.appVersion, 10);
+    var nameOffset, verOffset, ix;
 
-	// Opera
-	if ((verOffset = nAgt.indexOf("Opera")) != -1) {
-		browser.opera = true;
-		browser.name = "Opera";
-		browser.fullVersion = nAgt.substring(verOffset + 6);
-		if ((verOffset = nAgt.indexOf("Version")) != -1)
-			browser.fullVersion = nAgt.substring(verOffset + 8);
-	}
-		// MSIE
-	else if ((verOffset = nAgt.indexOf("MSIE")) != -1) {
-		browser.msie = true;
-		browser.name = "Microsoft Internet Explorer";
-		browser.fullVersion = nAgt.substring(verOffset + 5);
-	}
-		// Chrome
-	else if ((verOffset = nAgt.indexOf("Chrome")) != -1) {
-		browser.webkit = true;
-		browser.name = "Chrome";
-		browser.fullVersion = nAgt.substring(verOffset + 7);
-	}
-		// Safari
-	else if ((verOffset = nAgt.indexOf("Safari")) != -1) {
-		browser.webkit = true;
-		browser.name = "Safari";
-		browser.fullVersion = nAgt.substring(verOffset + 7);
-		if ((verOffset = nAgt.indexOf("Version")) != -1)
-			browser.fullVersion = nAgt.substring(verOffset + 8);
-	}
-		// Firefox
-	else if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
-		browser.mozilla = true;
-		browser.name = "Firefox";
-		browser.fullVersion = nAgt.substring(verOffset + 8);
-	}
-		// Other
-	else if ((nameOffset = nAgt.lastIndexOf(' ') + 1) <
-        (verOffset = nAgt.lastIndexOf('/'))) {
-		browser.name = nAgt.substring(nameOffset, verOffset);
-		browser.fullVersion = nAgt.substring(verOffset + 1);
-		if (browser.name.toLowerCase() === browser.name.toUpperCase()) {
-			browser.name = navigator.appName;
-		}
-	} else if (nAgt.indexOf('Mozilla') !== -1 && nAgt.indexOf('Firefox') === -1) {
-		browser.msie = true;
-		browser.name = "Internet Explorer";
-		browser.fullVersion = '11';
-	}
-	// trim the fullVersion string at semicolon/space if present
-	if ((ix = browser.fullVersion.indexOf(";")) != -1)
-		browser.fullVersion = browser.fullVersion.substring(0, ix);
-	if ((ix = browser.fullVersion.indexOf(" ")) != -1)
-		browser.fullVersion = browser.fullVersion.substring(0, ix);
+    // Opera
+    if ((verOffset = nAgt.indexOf("Opera")) != -1) {
+        browser.opera = true;
+        browser.name = "Opera";
+        browser.fullVersion = nAgt.substring(verOffset + 6);
+        if ((verOffset = nAgt.indexOf("Version")) != -1)
+            browser.fullVersion = nAgt.substring(verOffset + 8);
+    }
+    // MSIE
+    else if ((verOffset = nAgt.indexOf("MSIE")) != -1) {
+        browser.msie = true;
+        browser.name = "Microsoft Internet Explorer";
+        browser.fullVersion = nAgt.substring(verOffset + 5);
+    }
+    // Chrome
+    else if ((verOffset = nAgt.indexOf("Chrome")) != -1) {
+        browser.webkit = true;
+        browser.name = "Chrome";
+        browser.fullVersion = nAgt.substring(verOffset + 7);
+    }
+    // Safari
+    else if ((verOffset = nAgt.indexOf("Safari")) != -1) {
+        browser.webkit = true;
+        browser.name = "Safari";
+        browser.fullVersion = nAgt.substring(verOffset + 7);
+        if ((verOffset = nAgt.indexOf("Version")) != -1)
+            browser.fullVersion = nAgt.substring(verOffset + 8);
+    }
+    // Firefox
+    else if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
+        browser.mozilla = true;
+        browser.name = "Firefox";
+        browser.fullVersion = nAgt.substring(verOffset + 8);
+    }
+    // Other
+    else if ((nameOffset = nAgt.lastIndexOf(' ') + 1) <
+      (verOffset = nAgt.lastIndexOf('/'))) {
+        browser.name = nAgt.substring(nameOffset, verOffset);
+        browser.fullVersion = nAgt.substring(verOffset + 1);
+        if (browser.name.toLowerCase() === browser.name.toUpperCase()) {
+            browser.name = navigator.appName;
+        }
+    } else if (nAgt.indexOf('Mozilla') !== -1 && nAgt.indexOf('Firefox') === -1) {
+        browser.msie = true;
+        browser.name = "Internet Explorer";
+        browser.fullVersion = '11';
+    }
+    // trim the fullVersion string at semicolon/space if present
+    if ((ix = browser.fullVersion.indexOf(";")) != -1)
+        browser.fullVersion = browser.fullVersion.substring(0, ix);
+    if ((ix = browser.fullVersion.indexOf(" ")) != -1)
+        browser.fullVersion = browser.fullVersion.substring(0, ix);
 
-	browser.majorVersion = parseInt('' + browser.fullVersion, 10);
-	if (isNaN(browser.majorVersion)) {
-		browser.fullVersion = '' + parseFloat(navigator.appVersion);
-		browser.majorVersion = parseInt(navigator.appVersion, 10);
-	}
-	browser.version = browser.majorVersion;
+    browser.majorVersion = parseInt('' + browser.fullVersion, 10);
+    if (isNaN(browser.majorVersion)) {
+        browser.fullVersion = '' + parseFloat(navigator.appVersion);
+        browser.majorVersion = parseInt(navigator.appVersion, 10);
+    }
+    browser.version = browser.majorVersion;
 
-	$.browser = $.browser || {};
-	$.extend($.browser, browser);
-	return $;
+    $.browser = $.browser || {};
+    $.extend($.browser, browser);
+    return $;
 
 
 }));
@@ -583,143 +583,143 @@
 //umd pattern
 
 (function (root, factory) {
-	if (typeof module !== 'undefined' && module.exports) {
-		//commonjs
-		module.exports = factory();
-	} else if (typeof define === 'function' && define.amd) {
-		// AMD. Register as an anonymous module.
-		define([], factory);
-	} else {
-		// Browser globals (root is window)
-		root.returnExports = factory();
-	}
+    if (typeof module !== 'undefined' && module.exports) {
+        //commonjs
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory();
+    }
 }(this, function () {
-	var TABLET_MIN_WIDTH = 661;
-	var device = {};
-	device.touch = $.support.touch || 'ontouchend' in document;
-	device.android = false;
-	device.iphone = false;
-	device.ipad = false;
-	device.ipod = false;
-	device.ios = false;
-	device.webos = false;
-	device.blackberry = false;
-	device.smartphone = false;
-	device.tablet = false;
-	device.retina = false;
+    var TABLET_MIN_WIDTH = 661;
+    var device = {};
+    device.touch = $.support.touch || 'ontouchend' in document;
+    device.android = false;
+    device.iphone = false;
+    device.ipad = false;
+    device.ipod = false;
+    device.ios = false;
+    device.webos = false;
+    device.blackberry = false;
+    device.smartphone = false;
+    device.tablet = false;
+    device.retina = false;
 
 
-	if (/Android/.test(navigator.userAgent)) {
-		device.android = device.touch;
+    if (/Android/.test(navigator.userAgent)) {
+        device.android = device.touch;
 
-	} else if (/iPhone/.test(navigator.userAgent)) {
-		device.iphone = device.touch;
+    } else if (/iPhone/.test(navigator.userAgent)) {
+        device.iphone = device.touch;
 
-	} else if (/iPad/.test(navigator.userAgent)) {
-		device.ipad = device.touch;
+    } else if (/iPad/.test(navigator.userAgent)) {
+        device.ipad = device.touch;
 
-	} else if (/iPod/.test(navigator.userAgent)) {
-		device.ipod = device.touch;
+    } else if (/iPod/.test(navigator.userAgent)) {
+        device.ipod = device.touch;
 
-	} else if (/webOS/.test(navigator.userAgent)) {
-		device.webos = device.touch;
+    } else if (/webOS/.test(navigator.userAgent)) {
+        device.webos = device.touch;
 
-	} else if (/BlackBerry/.test(navigator.userAgent)) {
-		device.blackberry = device.touch;
+    } else if (/BlackBerry/.test(navigator.userAgent)) {
+        device.blackberry = device.touch;
 
-	}
-	if ((device.iphone) || (device.ipad) || (device.ipod)) {
-		device.ios = true;
-	}
+    }
+    if ((device.iphone) || (device.ipad) || (device.ipod)) {
+        device.ios = true;
+    }
 
 
-	Object.defineProperties(device, {
-		'viewport': {
-			/**
+    Object.defineProperties(device, {
+        'viewport': {
+            /**
              * getter
              *
              * @returns {{width: *, height: *}}
              */
-			get: function () {
-				var width = _getScreenWidth();
-				var height = _getScreenHeight();
-				return {
-					width: width,
-					height: height
-				};
-			},
-			configurable: false
+            get: function () {
+                var width = _getScreenWidth();
+                var height = _getScreenHeight();
+                return {
+                    width: width,
+                    height: height
+                };
+            },
+            configurable: false
 
-		},
+        },
 
-		'orientation': {
-			/**
+        'orientation': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var width = _getScreenWidth();
-				var height = _getScreenHeight();
-				return (height > width) ? 'portrait' : 'landscape';
-			},
-			configurable: false
+            get: function () {
+                var width = _getScreenWidth();
+                var height = _getScreenHeight();
+                return (height > width) ? 'portrait' : 'landscape';
+            },
+            configurable: false
 
-		},
+        },
 
-		/**
+        /**
          * getter
          * @returns {string}
          */
-		'orientationEvent': {
-			get: function () {
-				var supportsOrientationChange = "onorientationchange" in window,
-                    orientationEvent = supportsOrientationChange ? 'orientationchange' : 'resize';
+        'orientationEvent': {
+            get: function () {
+                var supportsOrientationChange = "onorientationchange" in window,
+                  orientationEvent = supportsOrientationChange ? 'orientationchange' : 'resize';
 
-				return orientationEvent;
-			}
-		}
-	});
+                return orientationEvent;
+            }
+        }
+    });
 
 
-	if (window.devicePixelRatio > 1) {
-		device.retina = true;
-	}
-	if ((_getScreenHeight() > TABLET_MIN_WIDTH) || (_getScreenWidth() > TABLET_MIN_WIDTH)) {
-		device.tablet = true;
-		device.smartphone = false;
-	} else {
-		device.tablet = false;
-		device.smartphone = true;
-	}
-	if (!device.touch) {
-		device.tablet = false;
-		device.smartphone = false;
-	}
+    if (window.devicePixelRatio > 1) {
+        device.retina = true;
+    }
+    if ((_getScreenHeight() > TABLET_MIN_WIDTH) || (_getScreenWidth() > TABLET_MIN_WIDTH)) {
+        device.tablet = true;
+        device.smartphone = false;
+    } else {
+        device.tablet = false;
+        device.smartphone = true;
+    }
+    if (!device.touch) {
+        device.tablet = false;
+        device.smartphone = false;
+    }
 
-	
 
-	//private
 
-	/**
+    //private
+
+    /**
      *
      * @returns {Number|*|jQuery}
      * @private
      */
-	function _getScreenHeight() {
-		return window.innerHeight || $(window).height();
-	}
+    function _getScreenHeight() {
+        return window.innerHeight || $(window).height();
+    }
 
-	/**
+    /**
      *
      * @returns {Number|*|jQuery}
      * @private
      */
-	function _getScreenWidth() {
-		return window.innerWidth || $(window).width();
-	}
-	$.device = device;
-	return $;
+    function _getScreenWidth() {
+        return window.innerWidth || $(window).width();
+    }
+    $.device = device;
+    return $;
 
 
 }));
@@ -738,226 +738,237 @@
 //umd pattern
 
 (function (root, factory) {
-	if (typeof module !== 'undefined' && module.exports) {
-		//commonjs
-		module.exports = factory();
-	} else if (typeof define === 'function' && define.amd) {
-		// AMD. Register as an anonymous module.
-		define([], factory);
-	} else {
-		// Browser globals (root is window)
-		root.returnExports = factory();
-	}
+    if (typeof module !== 'undefined' && module.exports) {
+        //commonjs
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory();
+    }
 }(this, function () {
-	var mq = {};
-	var MQ_TOUCH_MAX_WIDTH = 1024;
-	var MQ_TOUCH_MIN_WIDTH = 320;
-	var MQ_SMARTPHONE_MAX_WIDTH = 640;
-	var MQ_TABLET_MIN_WIDTH = 641;
+    var mq = {};
+    var MQ_TOUCH_MAX_WIDTH = 1024;
+    var MQ_TOUCH_MIN_WIDTH = 320;
+    var MQ_SMARTPHONE_MAX_WIDTH = 640;
+    var MQ_TABLET_MIN_WIDTH = 641;
 
-	Object.defineProperties(mq, {
-		'touch': {
-			/**
+    Object.defineProperties(mq, {
+        'touch': {
+            /**
              * getter
              *
              * @returns {boolean}
              */
-			get: function () {
-				return ($.device.viewport.width <= MQ_TOUCH_MAX_WIDTH);
-			},
-			configurable: false
+            get: function () {
+                return ($.device.viewport.width <= MQ_TOUCH_MAX_WIDTH);
+            },
+            configurable: false
 
-		},
+        },
 
-		'smartphone': {
-			/**
+        'smartphone': {
+            /**
              * getter
              *
              * @returns {boolean}
              */
-			get: function () {
-				return ($.device.viewport.width <= MQ_SMARTPHONE_MAX_WIDTH);
-			},
-			configurable: false
+            get: function () {
+                return ($.device.viewport.width <= MQ_SMARTPHONE_MAX_WIDTH);
+            },
+            configurable: false
 
-		},
+        },
 
-		'touchQuery': {
-			/**
+        'screenType':{
+            get:function(){
+                var width=$.device.viewport.width;
+                if(width > MQ_TOUCH_MAX_WIDTH) return 'large';
+                else if(width > MQ_SMARTPHONE_MAX_WIDTH) return 'medium';
+                else return 'small';
+            },
+            configurable:false
+
+        },
+
+        'touchQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TOUCH_MIN_WIDTH + 'px)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TOUCH_MIN_WIDTH + 'px)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'touchLandscapeQuery': {
-			/**
+        'touchLandscapeQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TOUCH_MIN_WIDTH + 'px) and (orientation:landscape)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TOUCH_MIN_WIDTH + 'px) and (orientation:landscape)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'touchPortraitQuery': {
-			/**
+        'touchPortraitQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TOUCH_MIN_WIDTH + 'px) and (orientation:portrait)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TOUCH_MIN_WIDTH + 'px) and (orientation:portrait)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'tabletQuery': {
-			/**
+        'tabletQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + (MQ_TOUCH_MAX_WIDTH - 1) + 'px) and (min-width:' + MQ_TABLET_MIN_WIDTH + 'px)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + (MQ_TOUCH_MAX_WIDTH - 1) + 'px) and (min-width:' + MQ_TABLET_MIN_WIDTH + 'px)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'tabletLandscapeQuery': {
-			/**
+        'tabletLandscapeQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TABLET_MIN_WIDTH + 'px) and (orientation:landscape)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TABLET_MIN_WIDTH + 'px) and (orientation:landscape)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'tabletPortraitQuery': {
-			/**
+        'tabletPortraitQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TABLET_MIN_WIDTH + 'px) and (orientation:portrait)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_TOUCH_MAX_WIDTH + 'px) and (min-width:' + MQ_TABLET_MIN_WIDTH + 'px) and (orientation:portrait)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'smartPhoneQuery': {
-			/**
+        'smartPhoneQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_SMARTPHONE_MAX_WIDTH + 'px)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_SMARTPHONE_MAX_WIDTH + 'px)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'smartPhoneLandscapeQuery': {
-			/**
+        'smartPhoneLandscapeQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_SMARTPHONE_MAX_WIDTH + 'px) and (orientation:landscape)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_SMARTPHONE_MAX_WIDTH + 'px) and (orientation:landscape)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'smartPhonePortraitQuery': {
-			/**
+        'smartPhonePortraitQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(max-width:' + MQ_SMARTPHONE_MAX_WIDTH + 'px) and (orientation:portrait)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(max-width:' + MQ_SMARTPHONE_MAX_WIDTH + 'px) and (orientation:portrait)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'landscapeQuery': {
-			/**
+        'landscapeQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(orientation:landscape)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(orientation:landscape)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'portraitQuery': {
-			/**
+        'portraitQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var mediaQuery = '(orientation:portrait)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var mediaQuery = '(orientation:portrait)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		},
+        },
 
-		'desktopQuery': {
-			/**
+        'desktopQuery': {
+            /**
              * getter
              *
              * @returns {string}
              */
-			get: function () {
-				var desktopMinWidth = MQ_TOUCH_MAX_WIDTH + 1;
-				var mediaQuery = '(min-width:' + desktopMinWidth + 'px)';
-				return mediaQuery;
-			},
-			configurable: false
+            get: function () {
+                var desktopMinWidth = MQ_TOUCH_MAX_WIDTH + 1;
+                var mediaQuery = '(min-width:' + desktopMinWidth + 'px)';
+                return mediaQuery;
+            },
+            configurable: false
 
-		}
+        }
 
 
-	});
+    });
 
-	$.device = $.device || {};
-	$.device.mq = mq;
+    $.device = $.device || {};
+    $.device.mq = mq;
 
-	return $;
+    return $;
 
 }));
 
@@ -976,23 +987,23 @@
  *
  */
 (function (root, factory) {
-	if (typeof module !== 'undefined' && module.exports) {
-		//commonjs
-		module.exports = factory();
-	} else if (typeof define === 'function' && define.amd) {
-		// AMD. Register as an anonymous module.
-		define([], factory);
-	} else {
-		// Browser globals (root is window)
-		root.returnExports = factory();
-	}
+    if (typeof module !== 'undefined' && module.exports) {
+        //commonjs
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory();
+    }
 }(this, function () {
-	var support = {};
-	
-	$.support = $.support || {};
-	$.extend($.support, support);
+    var support = {};
 
-	return $;
+    $.support = $.support || {};
+    $.extend($.support, support);
+
+    return $;
 
 }));
 
@@ -1221,9 +1232,9 @@
         //
         setFromString: function (prop, val) {
             var args =
-                (typeof val === 'string') ? val.split(',') :
-                    (val.constructor === Array) ? val :
-                        [val];
+              (typeof val === 'string') ? val.split(',') :
+                (val.constructor === Array) ? val :
+                  [val];
 
             args.unshift(prop);
 
@@ -1375,10 +1386,10 @@
                 if (this.hasOwnProperty(i)) {
                     // Don't use 3D transformations if the browser can't support it.
                     if ((!support.transform3d) && (
-                        (i === 'rotateX') ||
-                        (i === 'rotateY') ||
-                        (i === 'perspective') ||
-                        (i === 'transformOrigin'))) { continue; }
+                      (i === 'rotateX') ||
+                      (i === 'rotateY') ||
+                      (i === 'perspective') ||
+                      (i === 'transformOrigin'))) { continue; }
 
                     if (i[0] !== '_') {
                         if (use3d && (i === 'scale')) {
@@ -1741,7 +1752,7 @@
 
     function _unbindAnimation(ele,event,animation,animationType,callback){
         ele.removeCSSStyles()
-            .removeClass(animation);
+          .removeClass(animation);
         //hide element if animationOut
         if((animationType.indexOf('Out')>-1)||(animationType.indexOf('out')>-1)){
             ele.hide();
@@ -1859,7 +1870,7 @@
 }));
 
 
-function (root, factory) {
+(function (root, factory) {
     if (typeof module !== 'undefined' && module.exports) {
         //commonjs
         module.exports = factory();
@@ -1921,7 +1932,6 @@ function (root, factory) {
               }
           },
           onTouchStart = function (e) {
-
               var pointer = getPointerEvent(e);
               // caching the current x
               cachedX = currX = pointer.pageX;
@@ -1940,8 +1950,9 @@ function (root, factory) {
                     cachedY <= currY + precision &&
                     !touchStarted
                   ) {
+
                       // Here you get the Tap event
-                      sendEvent(e.target, (tapNum === 2) ? 'dbltap' : 'tap', e);
+                      sendEvent(e.target, (tapNum > 1) ? 'dbltap' : 'tap', e);
                   }
                   tapNum = 0;
               }, taptreshold);
@@ -1952,7 +1963,7 @@ function (root, factory) {
                 deltaY = cachedY - currY,
                 deltaX = cachedX - currX;
               touchStarted = false;
-
+              if(e.pointerId) return;
               if (deltaX <= -swipeTreshold)
                   eventsArr.push('swiperight');
 
@@ -2016,8 +2027,6 @@ function (root, factory) {
 
 }));
 
-
-
 /*
  * =============================================================
  * jQuery special events
@@ -2053,42 +2062,42 @@ function (root, factory) {
         };
 
         var throttle = 250,
-            handler = function () {
-                curr = (new Date()).getTime();
-                diff = curr - lastCall;
+          handler = function () {
+              curr = (new Date()).getTime();
+              diff = curr - lastCall;
 
-                if (diff >= throttle) {
+              if (diff >= throttle) {
 
-                    lastCall = curr;
-                    $(this).trigger("throttledresize");
+                  lastCall = curr;
+                  $(this).trigger("throttledresize");
 
-                } else {
+              } else {
 
-                    if (heldCall) {
-                        clearTimeout(heldCall);
-                    }
+                  if (heldCall) {
+                      clearTimeout(heldCall);
+                  }
 
-                    // Promise a held call will still execute
-                    heldCall = setTimeout(handler, throttle - diff);
-                }
-            },
-            lastCall = 0,
-            heldCall,
-            curr,
-            diff;
+                  // Promise a held call will still execute
+                  heldCall = setTimeout(handler, throttle - diff);
+              }
+          },
+          lastCall = 0,
+          heldCall,
+          curr,
+          diff;
     })();
 
     /* orientationchange special event--------------------------------------------------------------------------------*/
     /* ported from jQuery.mobile */
     (function () {
         var win = $(window),
-            event_name = "orientationchange",
-            special_event,
-            get_orientation,
-            last_orientation,
-            initial_orientation_is_landscape,
-            initial_orientation_is_default,
-            portrait_map = { "0": true, "180": true };
+          event_name = "orientationchange",
+          special_event,
+          get_orientation,
+          last_orientation,
+          initial_orientation_is_landscape,
+          initial_orientation_is_default,
+          portrait_map = { "0": true, "180": true };
 
         // It seems that some device/browser vendors use window.orientation values 0 and 180 to
         // denote the "default" orientation. For iOS devices, and most other smart-phones tested,
@@ -2112,8 +2121,8 @@ function (root, factory) {
             // need to make sure it is large enough to exclude the developer console case.
 
             var ww = window.innerWidth || $(window).width(),
-                wh = window.innerHeight || $(window).height(),
-                landscape_threshold = 50;
+              wh = window.innerHeight || $(window).height(),
+              landscape_threshold = 50;
 
             initial_orientation_is_landscape = ww > wh && (ww - wh) > landscape_threshold;
 
@@ -2222,10 +2231,10 @@ function (root, factory) {
     /* ported from jQuery.mobile */
     (function () {
         var meta = $("meta[name=viewport]"),
-            initialContent = meta.attr("content"),
-            disabledZoom = initialContent + ",maximum-scale=1, user-scalable=no",
-            enabledZoom = initialContent + ",maximum-scale=10, user-scalable=yes",
-            disabledInitially = /(user-scalable[\s]*=[\s]*no)|(maximum-scale[\s]*=[\s]*1)[$,\s]/.test(initialContent);
+          initialContent = meta.attr("content"),
+          disabledZoom = initialContent + ",maximum-scale=1, user-scalable=no",
+          enabledZoom = initialContent + ",maximum-scale=10, user-scalable=yes",
+          disabledInitially = /(user-scalable[\s]*=[\s]*no)|(maximum-scale[\s]*=[\s]*1)[$,\s]/.test(initialContent);
 
         $.device.zoom = $.extend({}, {
             enabled: !disabledInitially,
@@ -2266,7 +2275,7 @@ function (root, factory) {
         }
 
         var zoom = $.device.zoom,
-            evt, x, y, z, aig;
+          evt, x, y, z, aig;
 
         function checkTilt(e) {
             evt = e.originalEvent;
@@ -2287,8 +2296,8 @@ function (root, factory) {
         }
 
         $(window)
-            .bind("orientationchange.iosorientationfix", zoom.enable)
-            .bind("devicemotion.iosorientationfix", checkTilt);
+          .bind("orientationchange.iosorientationfix", zoom.enable)
+          .bind("devicemotion.iosorientationfix", checkTilt);
 
     }());
 
@@ -2305,9 +2314,9 @@ function (root, factory) {
             setup: function () {
 
                 var thisObject = this,
-                    $this = $(thisObject),
-                    scrolling,
-                    timer;
+                  $this = $(thisObject),
+                  scrolling,
+                  timer;
 
                 function trigger(event, state) {
                     scrolling = state;
@@ -2629,8 +2638,8 @@ function (root, factory) {
             'transform':'',
             'height': ''
         })
-            .removeClass(leftBoxShadowClass)
-            .removeClass(fixedToggleContainerClass);
+          .removeClass(leftBoxShadowClass)
+          .removeClass(fixedToggleContainerClass);
     };
 
     transforms.resetTransition = function (element) {
@@ -2707,15 +2716,15 @@ function (root, factory) {
         };
 
         element
-            .on(transitionEnd, function () {
-                if (opts.transitionEnd) {
-                    $(this).off(transitionEnd);
-                }
-                if (callback) {
-                    callback();
-                }
-            })
-            .css(obj);
+          .on(transitionEnd, function () {
+              if (opts.transitionEnd) {
+                  $(this).off(transitionEnd);
+              }
+              if (callback) {
+                  callback();
+              }
+          })
+          .css(obj);
     };
 
     $.transforms = $.transforms || {};
